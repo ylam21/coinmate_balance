@@ -4,6 +4,7 @@ import (
 	"crypto/hmac"
 	"crypto/sha256"
 	"encoding/hex"
+	"fmt"
 	"os"
 	"strings"
 )
@@ -12,6 +13,10 @@ type Client struct {
 	ClientID   string
 	PublicKey  string
 	PrivateKey string
+}
+
+func EnvVarMissing(envVarName string) error {
+	return fmt.Errorf("Missing enviroment variable: %s", envVarName)
 }
 
 func (c *Client) NewClientFromEnv() error {
