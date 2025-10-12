@@ -9,7 +9,9 @@ import (
 )
 
 func main() {
-	client, err := coinmate.NewClientFromEnv()
+	var client coinmate.Client
+
+	err := client.NewClientFromEnv()
 	if err != nil {
 		log.Fatal(err)
 	}

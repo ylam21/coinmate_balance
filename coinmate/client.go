@@ -14,22 +14,26 @@ type Client struct {
 	PrivateKey string
 }
 
-func NewClientFromEnv() (*Client, error) {
+func (c *Client) NewClientFromEnv() error {
 	clientID := os.Getenv("COINMATE_CLIENT_ID")
 	publicKey := os.Getenv("COINMATE_PUBLIC_KEY")
 	privateKey := os.Getenv("COINMATE_PRIVATE_KEY")
 
 	if clientID == "" {
-		return nil, EnvVarMissing("COINMATE_CLIENT_ID")
+		return EnvVarMissing("COINMATE_CLIENT_ID")
 	}
 	if publicKey == "" {
-		return nil, EnvVarMissing("COINMATE_PUBLIC_KEY")
+		return EnvVarMissing("COINMATE_PUBLIC_KEY")
 	}
 	if privateKey == "" {
-		return nil, EnvVarMissing("COINMATE_PRIVATE_KEY")
+		return EnvVarMissing("COINMATE_PRIVATE_KEY")
 	}
 
-	return &Client{clientID, publicKey, privateKey}, nil
+	c.ClientID = clientID
+	c.PublicKey = publicKey
+	c.PrivateKey = privateKey
+
+	return nil
 }
 
 func (c *Client) computeSignature(nonce string) string {
