@@ -1,9 +1,8 @@
 # coinmate_balance
 
 `coinmate_balance` is a small CLI tool that prints the balance of your BTC portfolio for your CoinMate account without requiring you to log in manually or provide 2FA each time.
-
 It exists to make checking your BTC portfolio quick and automated using your CoinMate API key.
----
+
 
 ## Prerequisites
 
