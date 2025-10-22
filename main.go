@@ -41,7 +41,7 @@ func main() {
 	priceUSD := priceEUR * eurToUSD
 	valueCZK := btcBalance * priceCZK
 
-	fmt.Printf("BTC Price: %.0f USD\n", priceUSD)
-	fmt.Printf("BTC Balance: %.8f BTC\n", btcBalance)
-	fmt.Printf("BTC Balance in CZK: %.0f CZK\n", valueCZK)
+	fmt.Printf("BTC Price:\t\t%.0f\t\tUSD\n", priceUSD)
+	fmt.Printf("BTC Balance:\t\t%.8f\tBTC\n", btcBalance)
+	fmt.Printf("BTC Balance in CZK:\t%.0f\t\tCZK\n", valueCZK)
 }
