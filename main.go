@@ -7,28 +7,9 @@ import (
 	"log"
 	"os"
 	"text/tabwriter"
-	"time"
 
 	"github.com/fatih/color"
 )
-
-func printTable(priceUSD, btcBalance, valueCZK float64) {
-	w := tabwriter.NewWriter(os.Stdout, 0, 0, 2, ' ', 0)
-
-	fmtPrice := fmt.Sprintf("%12.0f", priceUSD)
-	fmtBal := fmt.Sprintf("%12.8f", btcBalance)
-	fmtValCZK := fmt.Sprintf("%12.0f", valueCZK)
-
-	fmt.Printf("[%s]\n\n", time.Now().Format("2006-01-02 15:04:05"))
-	fmt.Fprintf(w, "BTC Price:\t %s $\n", fmtPrice)
-	fmt.Fprintln(w, "\t\t")
-	fmt.Fprintln(w, "Portfolio:\t\t")
-	fmt.Fprintln(w, "----------\t\t")
-	fmt.Fprintf(w, "Balance (BTC):\t %s ₿\n", fmtBal)
-	fmt.Fprintf(w, "Value (CZK):\t %s Kč\n", fmtValCZK)
-
-	w.Flush()
-}
 
 func printTable(priceUSD, btcBalance, valueCZK float64) {
 	yellow := color.New(color.FgYellow).SprintFunc()
