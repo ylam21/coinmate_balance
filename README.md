@@ -43,7 +43,7 @@ To compile the executable binary:
 
 ```bash
 cd coinmate_balance
-go build -o balance ./main.go
+go build -o bin/balance .
 ```
 
 ---
@@ -53,7 +53,7 @@ go build -o balance ./main.go
 Run the program:
 
 ```bash
-./balance
+./bin/balance
 ```
 
 It will fetch your BTC balance from CoinMate and print:
@@ -73,7 +73,9 @@ It will fetch your BTC balance from CoinMate and print:
 ## Example Output
 
 ```text
-BTC Price: 34500 USD
-BTC Balance: 0.001 BTC
-BTC Balance in CZK: 722 CZK
-```
+BTC Price:      $       212121.21
+
+Portfolio:
+----------
+Balance (BTC):  ₿      0.00000021
+Value (CZK):    Kč          21.21
