@@ -22,7 +22,7 @@ func printTable(priceUSD, btcBalance, valueCZK float64) {
 	fmtBal := bold(fmt.Sprintf("%12.8f", btcBalance))
 	fmtValCZK := bold(fmt.Sprintf("%12.2f", valueCZK))
 
-	fmt.Fprintf(w, "%s\t%s \t%s\n", faint("BTC Price:"), yellow("$"), fmtPrice)
+	fmt.Fprintf(w, "%s\t%s \t%s\n", faint("BTC Price (USD):"), yellow("$"), fmtPrice)
 	fmt.Fprintln(w, "\t\t")
 	fmt.Fprintf(w, "%s\t\t\n", bold("Portfolio:"))
 	fmt.Fprintf(w, "%s\t\t\n", bold("----------"))
