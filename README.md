@@ -53,7 +53,7 @@ go build -o bin/balance .
 Run the program:
 
 ```bash
-./bin/balance
+/bin/balance
 ```
 
 It will fetch your BTC balance from CoinMate and print:
